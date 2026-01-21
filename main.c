@@ -4,7 +4,6 @@
  * Calculates the rental cost based on pricing rules.
  */
 
-//this is a change
 int costCalculation(int first_day, int daily_cost, int weekly_max, int days) {
     int cost = 0;
 
