@@ -6,27 +6,25 @@
 int costCalculation(int first_day, int daily_cost, int weekly_max, int days) {
     int cost = 0;
 
-    // Case 1: Exactly 1 day rental
     if (days == 1) {
         cost = first_day;
     }
-    // Case 2: 2–7 days rental
     else if (days <= 7) {
         cost = first_day + (days - 1) * daily_cost;
-
-        // Apply weekly cap
         if (cost > weekly_max) {
             cost = weekly_max;
         }
     }
-    // Case 3: More than 7 days
     else {
         int weeks = days / 7;
         int remaining_days = days % 7;
+        int remaining_cost = remaining_days * daily_cost;
 
-        // Weekly max applies, first-day charge does not
-        cost = weeks * weekly_max;
-        cost += remaining_days * daily_cost;
+        if (remaining_cost > weekly_max) {
+            remaining_cost = weekly_max;
+        }
+
+        cost = weeks * weekly_max + remaining_cost;
     }
 
     return cost;
@@ -42,7 +40,7 @@ int main(void) {
 
     // Validate AC selection
     if (AC < 1 || AC > 4) {
-        printf("Invalid selection.\n");
+        printf("Invalid selection. Select from 1 to 4.");
         return 0;
     }
 
@@ -84,7 +82,7 @@ int main(void) {
     }
 
     // Output final rental charge
-    printf("Charge ($): %d\n", cost);
+    printf("Charge ($): %d", cost);
 
     return 0;
 }
