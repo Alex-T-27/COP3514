@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*
- * Calculates the rental cost based on pricing rules.
+ * Calculates the rental cost based on pricing rules. A new change
  */
 int costCalculation(int first_day, int daily_cost, int weekly_max, int days) {
     int cost = 0;
