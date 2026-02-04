@@ -46,9 +46,10 @@ int main(void)
             }
             else
             {
-                printf("Class: Non-printable Character\n");
+                printf("Class: Non-printable or extended ASCII\n");
                 printf("No conversion done\n");
             }
+            printf("\n");
         }
 
     } while (!done);
