@@ -1,5 +1,30 @@
 #include <stdio.h>
 
+int classify_and_convert_character(int ch) {
+    if (ch >= 65 && ch <= 90) {
+        // Uppercase Letter
+        printf("Class: Uppercase Letter\n");
+        printf("Converted to: '%c'", ch + 32);
+    } else if (ch >= 97 && ch <= 122) {
+        // Lowercase Letter
+        printf("Class: Lowercase Letter\n");
+        printf("Converted to: '%c'", ch - 32);
+    } else if (ch >= 48 && ch <= 57) {
+        // Digit
+        printf("Class: Digit\n");
+        printf("No conversion done");
+    } else if (ch >= 32 && ch <= 126) {
+        // Printable Symbol
+        printf("Class: Printable Symbol\n");
+        printf("No conversion done");
+    } else {
+        // Non-printable or extended ASCII
+        printf("Class: Non-printable or extended ASCII\n");
+        printf("No conversion done");
+    }
+    return 0;
+};
+
 int main(void)
 {
     int ch;
@@ -24,31 +49,11 @@ int main(void)
             printf("\nYou typed: '%c' (ASCII %d)\n", ch, ch);
 
             /* Classify character */
-            if (ch >= 65 && ch <= 90)
-            {
-                printf("Class: Uppercase Letter\n");
-                printf("Converted to: '%c'\n", ch + 32);
-            }
-            else if (ch >= 97 && ch <= 122)
-            {
-                printf("Class: Lowercase Letter\n");
-                printf("Converted to: '%c'\n", ch - 32);
-            }
-            else if (ch >= 48 && ch <= 57)
-            {
-                printf("Class: Digit\n");
-                printf("No conversion done\n");
-            }
-            else if (ch >= 32 && ch <= 126)
-            {
-                printf("Class: Printable Symbol\n");
-                printf("No conversion done\n");
-            }
-            else
-            {
-                printf("Class: Non-printable or extended ASCII\n");
-                printf("No conversion done\n");
-            }
+            classify_and_convert_character(ch);
+            printf("\n");
+        }
+        if (!done)
+        {
             printf("\n");
         }
 
