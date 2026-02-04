@@ -37,17 +37,17 @@ int main(void)
             else if (ch >= 48 && ch <= 57)
             {
                 printf("Class: Digit\n");
-                printf("Converted to: '%c'\n", ch);
+                printf("No conversion done\n");
             }
             else if (ch >= 32 && ch <= 126)
             {
                 printf("Class: Printable Symbol\n");
-                printf("Converted to: '%c'\n", ch);
+                printf("No conversion done\n");
             }
             else
             {
                 printf("Class: Non-printable Character\n");
-                printf("Converted to: '%c'\n", ch);
+                printf("No conversion done\n");
             }
         }
 
